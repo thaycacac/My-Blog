@@ -1,60 +1,86 @@
 <template>
-  <v-app>
-    <v-toolbar dark  class="primary">
-      <v-toolbar-side-icon @click.native.stop="sideNav=!sideNav"></v-toolbar-side-icon>
-      <v-toolbar-title class="">
-        <router-link to="/" class="textLink">
-          My First Project
-        </router-link>
-      </v-toolbar-title>
-      <v-spacer></v-spacer>
-      <v-toolbar-items>
-        <v-btn flat 
-        v-for="item in menuItems" 
-        :key=item.title
-        router
-        :to="item.link"
-        >
-          <v-icon>{{ item.icon }}</v-icon>
-          {{ item.title }}
-          </v-btn>
-      </v-toolbar-items>
-    </v-toolbar>
-    <!-- <v-navigation-drawer v-model="sideNav">
-      <v-list>
-        <v-list-tile v-for="item in menuItems" :key=item.title>
-          <v-list-tile-action>
-            <v-icon>{{ item.icon }}</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>{{ item.title }}</v-list-tile-content>
-        </v-list-tile>
-      </v-list>
-    </v-navigation-drawer> -->
-    <main>
-      <router-view></router-view>
-    </main>
-  </v-app>
-</template>
+    <div class="container">
+      <nav class="navbar is-transparent">
+        <div class="navbar-brand">
+          <router-link to="/" class="navbar-item">
+            <img src="https://bulma.io/images/bulma-logo.png" alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28">
+          </router-link>
+          <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+        <div id="navbarExampleTransparentExample" class="navbar-menu">
+          <div class="navbar-start">
+            <router-link to="/meetups" class="navbar-item">
+              <span class="icon">
+                <i class="fas fa-users"></i>
+              </span>
+              <span>
+                View Meetups
+              </span>
+            </router-link>
+            <router-link to="/meetup/new" class="navbar-item">
+              <span class="icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </span>
+              <span>
+                Organize Meetup
+              </span>
+            </router-link>
+          </div>
+
+          <div class="navbar-end">
+            <div class="navbar-item">
+              <div class="field is-grouped">
+                <p class="control">
+                  <router-link to="/profile" class="navbar-item">
+                    <button class="button is-light">
+                      <span class="icon">
+                        <i class="fas fa-user"></i>
+                      </span>
+                      <span>
+                        Profile
+                      </span>
+                    </button>
+                  </router-link>
+                </p>
+                <p class="control">
+                  <router-link to="/signup" class="navbar-item">
+                    <button class="button is-light">
+                      <span class="icon">
+                        <i class="fas fa-user-plus"></i>
+                      </span>
+                      <span>
+                        Sign Up
+                      </span>
+                    </button>
+                  </router-link>
+                </p>
+                <p class="control">
+                  <router-link to="/signin" class="navbar-item is-primary">
+                    <button class="button is-primary">
+                      <span class="icon">
+                        <i class="fas fa-sign-in-alt"></i>
+                      </span>
+                      <span>
+                        Sign In
+                      </span>
+                    </button>
+                  </router-link>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+       <router-view> </router-view>
+    </div>
+  </template>
 
 <script>
-export default {
-  data: () => {
-    return {
-      sideNav: false,
-      menuItems: [
-        { icon: 'supervisor_account', title: 'View Meetups', link: '/meetups' },
-        { icon: 'room', title: 'Organize Meetup', link: '/meetup/new' },
-        { icon: 'person', title: 'Profile', link: '/profile' },
-        { icon: 'face', title: 'Sign up', link: '/signup' },
-        { icon: 'lock_open', title: 'Sign_in', link: '/signin' }
-      ]
-    }
-  }
-}
+
 </script>
 <style>
-.textLink{
-  color: black;
-  text-decoration: none;
-}
 </style>

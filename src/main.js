@@ -1,45 +1,15 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import Buefy from 'buefy'
+import 'buefy/lib/buefy.css'
+import VueCarousel from 'vue-carousel'
+import Vuex from 'vuex'
+import store from './store'
 
-import {
-  Vuetify,
-  VApp,
-  VNavigationDrawer,
-  VFooter,
-  VList,
-  VBtn,
-  VIcon,
-  VGrid,
-  VToolbar,
-  VCarousel,
-  transitions
-} from 'vuetify'
-import '../node_modules/vuetify/src/stylus/app.styl'
-
-Vue.use(Vuetify, {
-  components: {
-    VApp,
-    VNavigationDrawer,
-    VFooter,
-    VList,
-    VBtn,
-    VIcon,
-    VGrid,
-    VToolbar,
-    VCarousel,
-    transitions
-  },
-  theme: {
-    primary: '#ee44aa',
-    secondary: '#424242',
-    accent: '#82B1FF',
-    error: '#FF5252',
-    info: '#2196F3',
-    success: '#4CAF50',
-    warning: '#FFC107'
-  }
-})
+Vue.use(VueCarousel)
+Vue.use(Buefy)
+Vue.use(Vuex)
 
 Vue.config.productionTip = false
 
@@ -47,5 +17,6 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
+  store,
   render: h => h(App)
 })
