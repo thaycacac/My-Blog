@@ -10,21 +10,27 @@ export default new Vuex.Store({
   state: {
     loaderMeetups: [
       {
-        image: '/static/hcm.jpg',
-        id: 'hcm',
         title: 'Ho Chi Minh',
+        location: 'ho chi minh',
+        id: 'hcm',
+        image: '/static/hcm.jpg',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris. ',
         date: '2018-06-27'
       },
       {
-        image: '/static/hn.jpg',
-        id: 'hn',
         title: 'Ha Noi',
+        location: 'ha noi',
+        id: 'hn',
+        image: '/static/hn.jpg',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris. ',
         date: '2018-06-26'
       },
       {
-        image: '/static/dn.jpg',
-        id: 'dn',
         title: 'Da Nang',
+        location: 'da nang',
+        id: 'dn',
+        image: '/static/dn.jpg',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris. ',
         date: '2018-06-28'
       }
     ],

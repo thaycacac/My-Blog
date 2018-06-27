@@ -26,8 +26,7 @@
         </div>
       </div>
       <div class="content">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Phasellus nec iaculis mauris.
+        {{ meetup.description }}
         <br>
         <time>{{ meetup.date }}</time>
       </div>
