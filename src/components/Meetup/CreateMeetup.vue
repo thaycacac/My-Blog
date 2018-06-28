@@ -11,6 +11,7 @@
                 <b-input v-model="image"></b-input>
             </b-field>
             <img :src="image">
+            <input class="input" type="date" v-model="date">
             <b-field label="Description">
                 <b-input maxlength="200" type="textarea" v-model="description"></b-input>
             </b-field>
@@ -28,7 +29,8 @@ export default {
       title: '',
       location: '',
       image: '',
-      description: ''
+      description: '',
+      date: ''
     }
   },
   computed: {
@@ -36,7 +38,8 @@ export default {
       return this.title !== '' &&
       this.location !== '' &&
       this.image !== '' &&
-      this.description !== ''
+      this.description !== '' &&
+      this.date !== ''
     }
   },
   methods: {
@@ -47,7 +50,7 @@ export default {
         id: 'thaycacac',
         image: this.image,
         description: this.description,
-        date: new Date()
+        date: this.date
       }
       this.$store.dispatch('createMeetup', meetupDate)
       this.$router.push('/meetups')

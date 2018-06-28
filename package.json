@@ -12,6 +12,9 @@
   },
   "dependencies": {
     "buefy": "^0.6.6",
+    "bulma-calendar": "^4.0.1",
+    "bulma-extensions": "^2.2.1",
+    "firebase": "^5.1.0",
     "vue": "^2.5.2",
     "vue-carousel": "^0.8.1",
     "vue-router": "^3.0.1",

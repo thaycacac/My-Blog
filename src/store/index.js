@@ -34,13 +34,7 @@ export default new Vuex.Store({
         date: '2018-06-28'
       }
     ],
-    user: [
-      {
-        id: '',
-        name: '',
-        registerMeetups: ''
-      }
-    ]
+    user: null
   },
   getters,
   mutations,

@@ -12,6 +12,9 @@ export default {
     }
   },
   featuredMeetups: (state, getters) => {
-    return getters.loaderMeetups.slice(0, 5)
+    return state.loaderMeetups.slice(0, 5)
+  },
+  user (state) {
+    return state.user
   }
 }

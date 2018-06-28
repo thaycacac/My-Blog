@@ -34,7 +34,7 @@
           <div class="navbar-end">
             <div class="navbar-item">
               <div class="field is-grouped">
-                <p class="control">
+                <p class="control" v-if="userIsAuthenticated">
                   <router-link to="/profile" class="navbar-item">
                     <button class="button is-light">
                       <span class="icon">
@@ -46,7 +46,7 @@
                     </button>
                   </router-link>
                 </p>
-                <p class="control">
+                <p class="control" v-if="!userIsAuthenticated">
                   <router-link to="/signup" class="navbar-item">
                     <button class="button is-light">
                       <span class="icon">
@@ -58,7 +58,7 @@
                     </button>
                   </router-link>
                 </p>
-                <p class="control">
+                <p class="control" v-if="!userIsAuthenticated">
                   <router-link to="/signin" class="navbar-item is-primary">
                     <button class="button is-primary">
                       <span class="icon">
@@ -80,7 +80,14 @@
   </template>
 
 <script>
-
+export default {
+  computed: {
+    userIsAuthenticated () {
+      return this.$store.getters.user !== null && this.$store.getters.user !== undefined
+    }
+  }
+}
 </script>
+
 <style>
 </style>

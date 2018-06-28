@@ -1,5 +1,9 @@
 <template>
     <div>
-        <p>Profile</p>
-    </div>
+        <input class="input" type="date" v-model="date">
+    </div> 
 </template>
+
+
+
+
