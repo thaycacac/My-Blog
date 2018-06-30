@@ -9,11 +9,13 @@ import store from './store'
 import * as firebase from 'firebase'
 import jsCalendar from 'bulma-extensions/bulma-calendar/dist/js/bulma-calendar.js'
 import cssCalendar from 'bulma-extensions/bulma-calendar/dist/css/bulma-calendar.min.css'
+import AlertCmp from './components/Share/Alert.vue'
 
 Vue.use(VueCarousel)
 Vue.use(Buefy)
 Vue.use(Vuex)
 // Vue.use(bulmaCalendar)
+Vue.component('app-alert', AlertCmp)
 
 Vue.config.productionTip = false
 

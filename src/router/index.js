@@ -7,6 +7,7 @@ import Profile from '@/components/User/Profile'
 import SignUp from '@/components/User/SignUp'
 import SignIn from '@/components/User/SignIn'
 import Meetup from '@/components/Meetup/Meetup'
+import Test from '@/components/Share/Test'
 
 Vue.use(Router)
 
@@ -47,6 +48,11 @@ export default new Router({
       path: '/signin',
       name: 'SignIn',
       component: SignIn
+    },
+    {
+      path: '/test',
+      name: 'Test',
+      component: Test
     }
   ],
   mode: 'history'

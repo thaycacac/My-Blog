@@ -34,7 +34,11 @@ export default new Vuex.Store({
         date: '2018-06-28'
       }
     ],
-    user: null
+    user: null,
+    loading: false,
+    error: {
+      message: ''
+    }
   },
   getters,
   mutations,
