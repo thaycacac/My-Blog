@@ -1,6 +1,6 @@
 <template>
     <div>
-      <app-alert :text="error.message" v-show="checkError"></app-alert>
+    <app-alert :text="error.message" v-show="checkError"></app-alert>
     <form @submit.prevent="register()">
       <div class="field">
         <label class="label">Email</label>
