@@ -13,5 +13,8 @@ export default {
   },
   clearError (state) {
     state.error.message = ''
+  },
+  setLoadMeetups (state, payload) {
+    state.loaderMeetups = payload
   }
 }

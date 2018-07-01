@@ -45,7 +45,7 @@
           <b-notification :closable="false">
             <button class="button is-link">Register</button>
             <b-loading :is-full-page="isFullPage" :active.sync="loading" :can-cancel="true"></b-loading>
-        </b-notification>
+          </b-notification>
         </div>
         <div class="control">
           <button class="button is-text">Cancel</button>

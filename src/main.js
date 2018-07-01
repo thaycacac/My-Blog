@@ -36,5 +36,6 @@ new Vue({
       storageBucket: 'vuejs-http-f93b6.appspot.com',
       messagingSenderId: '279849162428'
     })
+    this.$store.dispatch('loadMeetups')
   }
 })
