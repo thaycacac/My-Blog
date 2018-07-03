@@ -28,7 +28,7 @@ export default {
     const meetup = {
       title: payload.title,
       location: payload.location,
-      // imageUrl: payload.imageUrl,
+      imageUrl: payload.imageUrl,
       description: payload.description,
       date: payload.date,
       creatorId: 'thaycacac'
@@ -37,7 +37,7 @@ export default {
     let key
     firebase.database().ref('meetups').push(meetup)
       .then((data) => {
-        const key = data.key
+        key = data.key
         // commit('createMeetup', {
         //   ...meetup,
         //   id: key
@@ -50,9 +50,8 @@ export default {
         return firebase.storage().ref('meetups/' + key + '.' + ext).put(payload.image)
       })
       .then(fileData => {
-        imageUrl = fileData.metadata.downloadURLs[0] //error
-        console.log(this.imageUrl)
-        return firebase.database().ref('meetups').child('key').update({imageUrl: imageUrl})
+        // imageUrl = fileData.metadata.fullPath bug o cho lol nay :V
+        return firebase.database().ref('meetups').child(key).update({imageUrl: imageUrl})
       })
       .then(() => {
         commit('createMeetup', {
