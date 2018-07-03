@@ -11,7 +11,7 @@ export default {
             id: key,
             title: obj[key].title,
             location: obj[key].location,
-            image: obj[key].image,
+            imageUrl: obj[key].imageUrl,
             description: obj[key].description,
             data: obj[key].data
           })
@@ -28,15 +28,36 @@ export default {
     const meetup = {
       title: payload.title,
       location: payload.location,
-      image: payload.image,
+      // imageUrl: payload.imageUrl,
       description: payload.description,
-      date: payload.date
+      date: payload.date,
+      creatorId: 'thaycacac'
     }
+    let imageUrl
+    let key
     firebase.database().ref('meetups').push(meetup)
       .then((data) => {
         const key = data.key
+        // commit('createMeetup', {
+        //   ...meetup,
+        //   id: key
+        // })
+        return key
+      })
+      .then(key => {
+        const fileName = payload.image.name
+        const ext = fileName.slice(fileName.lastIndexOf('.'))
+        return firebase.storage().ref('meetups/' + key + '.' + ext).put(payload.image)
+      })
+      .then(fileData => {
+        imageUrl = fileData.metadata.downloadURLs[0] //error
+        console.log(this.imageUrl)
+        return firebase.database().ref('meetups').child('key').update({imageUrl: imageUrl})
+      })
+      .then(() => {
         commit('createMeetup', {
           ...meetup,
+          imageUrl: imageUrl,
           id: key
         })
       })
@@ -90,5 +111,12 @@ export default {
   },
   clearError ({commit}) {
     commit('clearError')
+  },
+  autoSignin ({commit}, payload) {
+    commit('setUser', {id: payload.uid, registeredMeetups: []})
+  },
+  logout ({commit}) {
+    firebase.auth().signOut()
+    commit('setUser', null)
   }
 }

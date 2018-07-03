@@ -46,6 +46,18 @@
                     </button>
                   </router-link>
                 </p>
+                <p class="control" v-if="userIsAuthenticated" @click="logout()">
+                  <router-link to="/" class="navbar-item is-primary">
+                    <button class="button is-primary">
+                      <span class="icon">
+                        <i class="fas fa-sign-out-alt"></i>
+                      </span>
+                      <span>
+                        Logout
+                      </span>
+                    </button>
+                  </router-link>
+                </p>
                 <p class="control" v-if="!userIsAuthenticated">
                   <router-link to="/signup" class="navbar-item">
                     <button class="button is-light">
@@ -84,6 +96,11 @@ export default {
   computed: {
     userIsAuthenticated () {
       return this.$store.getters.user !== null && this.$store.getters.user !== undefined
+    }
+  },
+  methods: {
+    logout () {
+      this.$store.dispatch('logout')
     }
   }
 }

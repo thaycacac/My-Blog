@@ -2,7 +2,7 @@
     <div class="card">
   <div class="card-image">
     <figure class="image is-3by1">
-      <img :src="meetup.image" alt="Placeholder image">
+      <img :src="meetup.imageUrl" alt="Placeholder image">
     </figure>
   </div>
   <div class="card-content">

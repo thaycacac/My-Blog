@@ -13,7 +13,7 @@ export default new Vuex.Store({
         title: 'Ha Noi',
         location: 'ha noi',
         id: 'hn',
-        image: '/static/hn.jpg',
+        imageUrl: '/static/hn.jpg',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris. ',
         date: '2018-06-26'
       }
