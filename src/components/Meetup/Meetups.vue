@@ -1,7 +1,6 @@
 <template>
   <div>
   <div class="card" v-for="meetup in meetups" :key="meetup.id">
-    <b-loading :is-full-page="isFullPage" :active.sync="loading" :can-cancel="true"></b-loading>
     <div class="card-image">
       <figure class="image is-3by1">
         <img :src="meetup.imageUrl" alt="Placeholder image">
@@ -19,11 +18,11 @@
           <p class="subtitle is-6">@{{ meetup.id }}</p>
         </div>
         <div class="media-right">
-         <router-link :to="'/meetup/'+meetup.id">
+        <router-link :to="'/meetup/'+meetup.id">
               <button class="button is-primary" :to="meetup.id">
                   View Meetup
               </button>
-         </router-link>
+        </router-link>
         </div>
       </div>
       <div class="content">

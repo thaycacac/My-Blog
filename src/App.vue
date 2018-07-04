@@ -87,7 +87,7 @@
           </div>
         </div>
       </nav>
-       <router-view> </router-view>
+      <router-view> </router-view>
     </div>
   </template>
 
@@ -95,7 +95,10 @@
 export default {
   computed: {
     userIsAuthenticated () {
-      return this.$store.getters.user !== null && this.$store.getters.user !== undefined
+      return (
+        this.$store.getters.user !== null &&
+        this.$store.getters.user !== undefined
+      )
     }
   },
   methods: {
