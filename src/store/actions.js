@@ -13,7 +13,8 @@ export default {
             location: obj[key].location,
             imageUrl: obj[key].imageUrl,
             description: obj[key].description,
-            data: obj[key].data
+            data: obj[key].data,
+            date: obj[key].date
           })
         }
         commit('setLoading', false)

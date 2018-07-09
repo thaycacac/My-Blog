@@ -30,7 +30,7 @@
             <img :src="imageUrl">
             <input class="input" type="date" v-model="date">
             <b-field label="Description">
-                <b-input maxlength="200" type="textarea" v-model="description"></b-input>
+                <b-input type="textarea" v-model="description"></b-input>
             </b-field>
             <button type="submit" class="button is-success" :disabled="!formIsValid">
                 Create Meetup

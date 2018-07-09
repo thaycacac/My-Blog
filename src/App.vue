@@ -3,7 +3,7 @@
       <nav class="navbar is-transparent">
         <div class="navbar-brand">
           <router-link to="/" class="navbar-item">
-            <img src="https://bulma.io/images/bulma-logo.png" alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28">
+            <img src="../static/logo.png" alt="Logo app" width="100" height="30">
           </router-link>
           <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
             <span></span>
@@ -18,7 +18,7 @@
                 <i class="fas fa-users"></i>
               </span>
               <span>
-                View Meetups
+                View Tourist Destination
               </span>
             </router-link>
             <router-link to="/meetup/new" class="navbar-item">
@@ -26,7 +26,7 @@
                 <i class="fas fa-map-marker-alt"></i>
               </span>
               <span>
-                Organize Meetup
+                Organize Destination
               </span>
             </router-link>
           </div>

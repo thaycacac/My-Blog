@@ -15,20 +15,21 @@
         </div>
         <div class="media-content">
           <p class="title is-4">{{ meetup.title }}</p>
-          <p class="subtitle is-6">@{{ meetup.id }}</p>
+          <p class="subtitle is-6">@Admin | {{ meetup.date }}</p>
+          
         </div>
         <div class="media-right">
         <router-link :to="'/meetup/'+meetup.id">
               <button class="button is-primary" :to="meetup.id">
-                  View Meetup
+                  View {{ meetup.title }}
               </button>
         </router-link>
         </div>
       </div>
       <div class="content">
-        {{ meetup.description }}
-        <br>
-        <time>{{ meetup.date }}</time>
+        <span style="display:block;text-overflow: ellipsis;width: 95%;overflow: hidden; white-space: nowrap;">
+          {{ meetup.description }}
+        </span>
       </div>
     </div>
     <hr>

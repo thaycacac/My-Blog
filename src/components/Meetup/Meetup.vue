@@ -14,12 +14,11 @@
       </div>
       <div class="media-content">
         <p class="title is-4">{{ meetup.title }}</p>
-        <p class="subtitle is-6">@{{ meetup.id }}</p>
+        <p class="subtitle is-6">@Admin</p>
       </div>
     </div>
     <div class="content">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Phasellus nec iaculis mauris.
+      {{ meetup.description }}
       <br>
       <time>{{ meetup.date }}</time>
       <hr>
